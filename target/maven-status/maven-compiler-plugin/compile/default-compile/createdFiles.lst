@@ -1,0 +1,10 @@
+com\miyuki\jdbot\waifupics\GetWaifu.class
+com\miyuki\jdbot\commands\Ping.class
+com\miyuki\jdbot\interfaces\Response.class
+com\miyuki\jdbot\init\CommandHandler.class
+com\miyuki\jdbot\Main.class
+com\miyuki\jdbot\init\CommandRegister.class
+com\miyuki\jdbot\listeners\Ready.class
+com\miyuki\jdbot\commands\Social.class
+com\miyuki\jdbot\interfaces\IResponse.class
+com\miyuki\jdbot\commands\Info.class
