@@ -9,7 +9,7 @@ import java.util.List;
 public interface IDeploy {
     static void deployBot(JDA bot, CommandData commandData) {
 
-        bot.upsertCommand(commandData);
+        bot.upsertCommand(commandData).queue();
 
     }
 
@@ -17,7 +17,7 @@ public interface IDeploy {
         List<Guild> guilds = bot.getGuilds();
         guilds.forEach(guild -> {
 
-            guild.upsertCommand(commandData);
+            guild.upsertCommand(commandData).queue();
 
         });
     }

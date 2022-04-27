@@ -1,5 +1,6 @@
 package com.miyuki.jdbot.init;
 
+import com.miyuki.jdbot.commands.Deploy;
 import com.miyuki.jdbot.commands.Info;
 import com.miyuki.jdbot.commands.Ping;
 import com.miyuki.jdbot.commands.Social;
@@ -19,6 +20,9 @@ public class CommandHandler extends ListenerAdapter {
                 break;
             case "social":
                 Social.getInstance().response(event);
+                break;
+            case "deploy":
+                Deploy.getInstance().response(event);
                 break;
         }
     }

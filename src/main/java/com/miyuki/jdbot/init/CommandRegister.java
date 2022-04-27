@@ -1,17 +1,24 @@
 package com.miyuki.jdbot.init;
 
-import net.dv8tion.jda.api.JDA;
+import com.miyuki.jdbot.commands.Deploy;
+import com.miyuki.jdbot.commands.Info;
+import com.miyuki.jdbot.commands.Ping;
+import com.miyuki.jdbot.commands.Social;
+import com.miyuki.jdbot.deploy.Bot;
+import com.miyuki.jdbot.deploy.Guild;
+import net.dv8tion.jda.api.events.Event;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import net.dv8tion.jda.api.interactions.commands.Command;
-import net.dv8tion.jda.api.interactions.commands.OptionType;
-import net.dv8tion.jda.api.interactions.commands.build.CommandData;
-import net.dv8tion.jda.api.interactions.commands.build.OptionData;
-import net.dv8tion.jda.api.requests.restaction.CommandCreateAction;
 
 public class CommandRegister extends ListenerAdapter {
 
-    public static void InsertCommands(JDA jda) {
+    public static void InsertCommands(Event event) {
 
-
+        Bot.getInstance().deploy(event.getJDA(), Deploy.getInstance().getCommandData());
+        Bot.getInstance().deploy(event.getJDA(), Social.getInstance().getCommandData());
+        Bot.getInstance().deploy(event.getJDA(), Info.getInstance().getCommandData());
+        Bot.getInstance().deploy(event.getJDA(), Ping.getInstance().getCommandData());
+        Guild.getInstance().deploy(event.getJDA(),Social.getInstance().getCommandData());
+        Guild.getInstance().deploy(event.getJDA(),Info.getInstance().getCommandData());
+        Guild.getInstance().deploy(event.getJDA(),Ping.getInstance().getCommandData());
     }
 }

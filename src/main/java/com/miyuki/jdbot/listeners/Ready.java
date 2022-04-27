@@ -1,7 +1,6 @@
 package com.miyuki.jdbot.listeners;
 
-import com.miyuki.jdbot.commands.Social;
-import com.miyuki.jdbot.deploy.Bot;
+import com.miyuki.jdbot.init.CommandRegister;
 import net.dv8tion.jda.api.events.ReadyEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
@@ -13,7 +12,7 @@ public class Ready extends ListenerAdapter {
  /*       event.getJDA().getGuilds().forEach(guild -> {
             guild.updateCommands().queue();
         });*/
-        Bot.getInstance().deploy(event.getJDA(), Social.getInstance().getCommandData());
+        CommandRegister.InsertCommands(event);
     }
 
 }

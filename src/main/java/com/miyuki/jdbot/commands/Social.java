@@ -12,7 +12,7 @@ import net.dv8tion.jda.internal.interactions.CommandDataImpl;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Social extends Response {
+public class Social extends Response{
 
     private static Social _instance;
     private static List<OptionData> optionData;
@@ -24,6 +24,7 @@ public class Social extends Response {
     public CommandData getCommandData() {
         return commandData;
     }
+
 
     private static void init() {
         optionData = new ArrayList<>();
