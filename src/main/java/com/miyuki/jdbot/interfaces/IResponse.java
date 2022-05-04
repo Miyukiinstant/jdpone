@@ -14,7 +14,7 @@ public interface IResponse {
         event.replyEmbeds(new EmbedBuilder().setTitle(title).setDescription(description).setColor(Color.magenta).build()).queue();
     }
 
-    static void responseEmbedError(SlashCommandInteractionEvent event, @Nonnull String title, @NotNull String description, Boolean ephemeral) {
+    static void responseEmbedError(SlashCommandInteractionEvent event, @Nonnull String title, @NotNull String description, @NotNull Boolean ephemeral) {
         event.replyEmbeds(new EmbedBuilder().setTitle(title).setDescription(description).setColor(Color.RED).build()).setEphemeral(ephemeral).queue();
     }
 

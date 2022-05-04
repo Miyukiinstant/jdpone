@@ -4,7 +4,7 @@ import com.miyuki.jdbot.init.RegisterBotCommands;
 import com.miyuki.jdbot.init.RegisterGuildCommands;
 import com.miyuki.jdbot.init.remover.CommandRemover;
 import com.miyuki.jdbot.interfaces.IResponse;
-import com.miyuki.jdbot.interfaces.Response;
+import com.miyuki.jdbot.interfaces.abstracts.Response;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
@@ -47,7 +47,7 @@ public class Deploy extends Response {
     @Override
     public void response(SlashCommandInteractionEvent event) {
         System.out.println(event.getUser().getAsTag());
-        System.out.println(event.getOptions().get(0));
+        System.out.println(event.getOptions().get(0).getAsString());
         if (event.getUser().getAsTag().equals("Miyuki#9756")) {
             switch (event.getOptions().get(0).getAsString()) {
                 case "bot":
@@ -55,13 +55,16 @@ public class Deploy extends Response {
                     RegisterBotCommands.InsertCommands(event);
                     IResponse.responseSimple(event, "Commands deployed on bot", true);
                     break;
-                case "guild":
+                case "guilds":
                     CommandRemover.GuildRemoveAllCommands(event);
                     RegisterGuildCommands.InsertCommands(event);
                     IResponse.responseSimple(event, "Commands deployed on guilds", true);
                     break;
             }
+            System.out.println("Commands deployed on " + event.getOptions().get(0).getAsString() + " by " + event.getUser().getAsTag());
+        } else {
+            IResponse.responseEmbedError(event, "ERROR", "you are not the creator of this bot", true);
         }
-        IResponse.responseEmbedError(event, "ERROR", "you are not the creator of this bot", true);
+
     }
 }

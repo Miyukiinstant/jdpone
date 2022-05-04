@@ -9,7 +9,7 @@ import net.dv8tion.jda.api.events.Event;
 public class RegisterBotCommands {
     public static void InsertCommands(Event event) {
         //Deploy commands on Bot
-        Bot.getInstance().deploy(event.getJDA(), Deploy.getInstance().getCommandData());
+        //Bot.getInstance().deploy(event.getJDA(), Deploy.getInstance().getCommandData());
         Bot.getInstance().deploy(event.getJDA(), Social.getInstance().getCommandData());
         Bot.getInstance().deploy(event.getJDA(), Info.getInstance().getCommandData());
         Bot.getInstance().deploy(event.getJDA(), Ping.getInstance().getCommandData());

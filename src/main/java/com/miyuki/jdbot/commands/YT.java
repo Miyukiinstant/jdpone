@@ -1,7 +1,7 @@
 package com.miyuki.jdbot.commands;
 
 import com.miyuki.jdbot.interfaces.IResponse;
-import com.miyuki.jdbot.interfaces.Response;
+import com.miyuki.jdbot.interfaces.abstracts.Response;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
