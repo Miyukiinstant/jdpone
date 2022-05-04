@@ -1,9 +1,6 @@
 package com.miyuki.jdbot.init;
 
-import com.miyuki.jdbot.commands.Deploy;
-import com.miyuki.jdbot.commands.Info;
-import com.miyuki.jdbot.commands.Ping;
-import com.miyuki.jdbot.commands.Social;
+import com.miyuki.jdbot.commands.*;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
@@ -23,6 +20,9 @@ public class CommandHandler extends ListenerAdapter {
                 break;
             case "deploy":
                 Deploy.getInstance().response(event);
+                break;
+            case "play":
+                YT.getInstance().play(event);
                 break;
         }
     }

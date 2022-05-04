@@ -21,10 +21,6 @@ public class Social extends Response{
     private Social() {
     }
 
-    public CommandData getCommandData() {
-        return commandData;
-    }
-
 
     private static void init() {
         optionData = new ArrayList<>();
@@ -50,6 +46,10 @@ public class Social extends Response{
             init();
         }
         return _instance;
+    }
+
+    public CommandData getCommandData() {
+        return commandData;
     }
 
     @Override

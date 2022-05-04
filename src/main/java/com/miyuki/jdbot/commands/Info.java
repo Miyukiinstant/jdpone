@@ -20,16 +20,16 @@ public class Info extends Response {
         commandData = new CommandDataImpl("info", "about bot");
     }
 
-    public CommandData getCommandData() {
-        return commandData;
-    }
-
     public static Info getInstance() {
         if (_instance == null) {
             _instance = new Info();
             init();
         }
         return _instance;
+    }
+
+    public CommandData getCommandData() {
+        return commandData;
     }
 
     @Override
